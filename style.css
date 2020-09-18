@@ -6,5 +6,15 @@
     display: block;
 }
 
-.tabs .active {
+li {
+    list-style: none;
+}
+
+li a {
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.tabs .active a {
+    color: green;
 }
