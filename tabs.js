@@ -8,16 +8,15 @@ const showTabs = function (tab) {
     const li = tab.parentNode;
     const div = li.parentNode.parentNode;
 
-    if (!li.classList.contains('active')) {
-        div.querySelector('.tabs .active').classList.remove('active');
-        li.classList.add('active');
-
-        div.querySelector('.tab-content.active').classList.remove('active');
-        document
-            .querySelector(tab.getAttribute('href'))
-            .classList.add('active');
+    if (li.classList.contains('active')) {
+        return false;
     }
-    return false;
+
+    div.querySelector('.tabs .active').classList.remove('active');
+    li.classList.add('active');
+
+    div.querySelector('.tab-content.active').classList.remove('active');
+    document.querySelector(tab.getAttribute('href')).classList.add('active');
 };
 
 tabs.forEach((tab) => {
@@ -33,3 +32,4 @@ const hashChange = function () {
 };
 
 window.addEventListener('hashchange', hashChange);
+hashChange();
